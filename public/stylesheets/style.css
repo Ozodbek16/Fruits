@@ -1,42 +1,47 @@
 * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 form {
-    width: 500px;
-    display: block;
-    margin: auto;
-    border: 1px solid rgba(47, 52, 58, 0.308);
-    padding: 30px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+  width: 500px;
+  display: block;
+  margin: auto;
+  border: 1px solid rgba(47, 52, 58, 0.308);
+  padding: 30px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 footer {
-    margin-top: 200px;
-    position: relative;
-    bottom: 0px;
-    left: 0;
-    right: 0;
+  margin-top: 200px;
+  position: relative;
+  bottom: 0px;
+  left: 0;
+  right: 0;
 }
 
 form button {
-    display: block;
-    padding: 10px;
-    margin: auto;
+  display: block;
+  padding: 10px;
+  margin: auto;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .ed {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.card .card-content p {
+  margin: 0;
+  margin-bottom: 30px;
 }
