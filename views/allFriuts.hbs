@@ -3,23 +3,21 @@
     <h2>All friuts</h2>
   </div>
   {{#each fruits}}
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image">
-          <img src={{img}} alt="image" />
-          <span
-            style="color: {{color}} !important; text-transform:uppercase;"
-            class="card-title"
-          >{{name}}</span>
-        </div>
-        <div class="card-content">
-          <p>The color of this {{name}} is {{color}}.</p>
-          <div class="card-action">
-            <a href="/fruits/search/{{id}}">This is a link</a>
-          </div>
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-image">
+        <img src={{img}} alt="image" />
+        <span style="color: {{color}} !important; text-transform:uppercase;" class="card-title">{{name}}</span>
+      </div>
+      <div class="card-content">
+        <p>The color of this {{name}} is {{color}}.</p>
+        <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
+          <a href="/fruits/search/{{id}}">This is a link</a>
+          <a href="#!" class="buy">BUY</a>
         </div>
       </div>
     </div>
+  </div>
   {{/each}}
 </div>
 

@@ -1,1 +1,20 @@
-{"fruits":[{"name":"Peach","color":"yellow","img":"http://geografiya.uz/uploads/posts/2015-05/1430618366_shaftoli-1.jpg","price":"17","id":"22bcfe84-c6a0-4563-86f1-ff1b64ad21c2"},{"name":"Apple","color":"red","img":"http://geografiya.uz/uploads/posts/2019-05/1557333629_olma.jpg","price":"12","id":"0c918786-fbdb-4fe8-8107-80ef76df330b"}]}
+{
+    "fruits": [
+        {
+            "name": "Apple",
+            "color": "red",
+            "img": "http://geografiya.uz/uploads/posts/2019-05/1557333629_olma.jpg",
+            "price": "12",
+            "id": "0c918786-fbdb-4fe8-8107-80ef76df330b",
+            "inCart": 0
+        },
+        {
+            "name": "peach",
+            "color": "yellow",
+            "img": "http://static.xabar.uz/crop/3/2/736_736_95_3234662383.jpg",
+            "price": "12",
+            "id": "50e4ae46-850c-4a5b-a66c-1495ac674f06",
+            "inCart": 0
+        }
+    ]
+}

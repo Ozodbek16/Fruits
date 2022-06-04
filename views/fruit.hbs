@@ -3,19 +3,16 @@
     <div class="card">
       <div class="card-image">
         <img src={{fruit.img}} alt="image" />
-        <span
-          style="color: {{fruit.color}} !important; text-transform:uppercase;"
-          class="card-title"
-        >{{fruit.name}}</span>
+        <span style="color: {{fruit.color}} !important; text-transform:uppercase;"
+          class="card-title">{{fruit.name}}</span>
       </div>
       <div class="card-content">
         <p>The color of this {{fruit.name}} is {{fruit.color}}. Price: {{fruit.price}}$</p>
         <div class="ed">
-          <a class="btn" href="/fruits/form/{{fruit.id}}">Edit</a>
-          <a class="btn" style="background-color: red;"
-            href="/fruits/delete/{{fruit.id}}"
-            onclick="alert('Do you really want to delete it')"
-          >Delete</a>
+          <a class="btn" style="background-color: green;" href="/fruits/form/{{fruit.id}}">Edit</a>
+          
+          <a class="btn" style="background-color: red;" href="/fruits/delete/{{fruit.id}}"
+            onclick="alert('Do you really want to delete it')">Delete</a>
         </div>
       </div>
     </div>

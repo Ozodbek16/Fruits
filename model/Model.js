@@ -18,6 +18,7 @@ class Fruits {
       img: this.img,
       price: this.price,
       id: uuid(),
+      inCart: 0,
     };
   }
 
@@ -86,6 +87,20 @@ class Fruits {
       );
     });
   }
+
+  async finFruit(son) {
+    let id = son;
+    const fruits = await Fruits.getAll();
+    let fruit = fruits.find((fruit) => fruit.id == id);
+    return new Promise((resolve, reject) => {
+      if (!fruit) {
+        return reject('err')
+      } else {
+        resolve(fruit)
+      }
+    })
+  }
 }
+
 
 module.exports = Fruits;

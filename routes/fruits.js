@@ -106,4 +106,8 @@ route.get("/search/:id", async (req, res) => {
   });
 });
 
+route.get('/data/fruits.json', async (req, res) => {
+  res.send(await Fruits.getAll())
+})
+
 module.exports = route;
