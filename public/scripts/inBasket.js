@@ -4,11 +4,11 @@ const url = '/fruits/data/fruits.json';
 
 const arr = async () => {
     const response = await fetch(url);
-    const fruits = await response.json();
+    const products = await response.json();
 
-    for (let i = 0; i <= btn.length - 1; i++) {
+    for (let i = 0; i < btn.length; i++) {
         btn[i].addEventListener('click', () => {
-            cartNum(fruits[i])
+            cartNum(products[i])
         })
     }
 
@@ -25,27 +25,21 @@ const arr = async () => {
             localStorage.setItem('num', 1)
             document.querySelector('.absolut span').innerHTML = 1;
         }
-        setItem(product)
+        setItems(product)
     }
 
-    function setItem(product) {
-        let cartItems = localStorage.getItem('ProductsinCart')
+    function setItems(product) {
+        let cartItems = localStorage.getItem('productsInCart')
+        cartItems = JSON.parse(cartItems)
+        console.log('my cart items are', cartItems);
+        product.inCart = 1
 
-        cartItems = JSON.parse(cartItems);
-
-        console.log(cartItems);
-
-        if (cartItems != null) {
-            cartItems[product.id].inCart += 1
-        } else {
-            product.inCart = 1
-            cartItems = {
-                [product.id]: product
-            }
+        cartItems = {
+            [product.name]: product
         }
 
 
-        localStorage.setItem('ProductsinCart', JSON.stringify(cartItems))
+        localStorage.setItem("productsInCart", JSON.stringify(cartItems))
     }
 }
 function onLoadCartNumber() {
