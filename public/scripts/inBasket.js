@@ -1,56 +1,32 @@
-const btn = document.querySelectorAll('.buy')
+const btn = document.querySelectorAll(".buy");
+const result = document.querySelector(".absolut span");
 
-const url = '/fruits/data/fruits.json';
+const url = "/fruits/data/fruits.json";
+let cartItems;
 
 const arr = async () => {
-    const response = await fetch(url);
-    const products = await response.json();
+  const response = await fetch(url);
+  const products = await response.json();
 
-    for (let i = 0; i < btn.length; i++) {
-        btn[i].addEventListener('click', () => {
-            cartNum(products[i])
-        })
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", () => {
+      products[i].inCart += 1;
+      console.log(products[i]);
+      cartNum();
+    });
+  }
+
+  function cartNum() {
+    let allCart = 0;
+    for (let i = 0; i < products.length; i++) {
+      const num = +products[i].inCart;
+      if (+products[i].inCart > 0) {
+        allCart += num;
+      }
+      localStorage.setItem("ProductNumber", allCart);
+      result.innerHTML = allCart;
     }
+  }
+};
 
-
-    function cartNum(product) {
-        let productNum = localStorage.getItem('num')
-
-        productNum = +productNum
-
-        if (productNum) {
-            localStorage.setItem('num', productNum + 1)
-            document.querySelector('.absolut span').innerHTML = productNum + 1;
-        } else {
-            localStorage.setItem('num', 1)
-            document.querySelector('.absolut span').innerHTML = 1;
-        }
-        setItems(product)
-    }
-
-    function setItems(product) {
-        let cartItems = localStorage.getItem('productsInCart')
-        cartItems = JSON.parse(cartItems)
-        console.log('my cart items are', cartItems);
-        product.inCart = 1
-
-        cartItems = {
-            [product.name]: product
-        }
-
-
-        localStorage.setItem("productsInCart", JSON.stringify(cartItems))
-    }
-}
-function onLoadCartNumber() {
-    let productNum = localStorage.getItem('num')
-
-    if (productNum) {
-        document.querySelector('.absolut span').innerHTML = productNum;
-    }
-}
-
-arr()
-
-
-onLoadCartNumber()
+arr();
